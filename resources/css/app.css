@@ -1,0 +1,502 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "animate.css";
+@import url("https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Baloo+2:wght@400;500;600;700;800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Slider */
+.logo {
+    font-family: "Montserrat", sans-serif;
+}
+
+header {
+    font-family: "Lato", sans-serif;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.arab {
+    font-family: "Amiri", serif;
+}
+
+/* Flickity Carousel */
+
+* {
+    box-sizing: border-box;
+}
+/* HP */
+.carousel-mengapa {
+    overflow: hidden;
+    background-color: white;
+    border-radius: 24px;
+    padding: 6px;
+    margin: 10px;
+    width: 80%;
+    height: 47vh;
+    counter-increment: carousel-mengapa;
+    -webkit-border-radius: 24px;
+    -moz-border-radius: 24px;
+    -ms-border-radius: 24px;
+    -o-border-radius: 24px;
+    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0
+        var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0
+        calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
+        var(--tw-shadow, 0 0 #0000);
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgb(226 232 240 / var(--tw-ring-opacity));
+    --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+        0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color),
+        0 2px 4px -2px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+        var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+/* IPad */
+@media screen and (min-width: 768px) {
+    .carousel-mengapa {
+        height: 30vh;
+        width: 18%;
+    }
+}
+
+/* PC */
+@media screen and (min-width: 1024px) {
+    .carousel-mengapa {
+        height: 35vh;
+        width: 20%;
+    }
+}
+
+/* HP */
+.carousel-hero {
+    width: 100%;
+    height: 540px;
+    counter-increment: carousel-hero;
+}
+
+/* IPad */
+@media screen and (min-width: 768px) {
+    .carousel-hero {
+        height: 540px;
+        width: 100%;
+    }
+}
+
+.carousel-post {
+    width: 100%;
+    height: auto;
+    margin-right: 10px;
+    /* center images in cells with flexbox */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-post-image {
+    display: block;
+    object-fit: cover;
+    max-height: 100%;
+}
+
+.flickity-viewport {
+    transition: height 0.2s;
+}
+
+.carousel-nav .carousel-post {
+    height: 80px;
+    width: 100px;
+    opacity: 70%;
+}
+
+.carousel-nav .carousel-post:before {
+    font-size: 50px;
+    line-height: 80px;
+}
+
+.carousel-nav .carousel-post.is-nav-selected {
+    opacity: 100%;
+}
+
+.carousel-cell {
+    width: auto;
+    margin-right: 10px;
+}
+
+/* Hamburger */
+.hamburger1 {
+    height: 30px;
+    display: -ms-grid;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    z-index: 120;
+}
+
+.hamburger1 div {
+    position: relative;
+    width: 30px;
+    height: 5px;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+#toggle1 {
+    display: none;
+}
+
+#toggle1:checked + .hamburger1 .top {
+    background-color: #fff;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    margin-top: 10px;
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+}
+
+#toggle1:checked + .hamburger1 .meat {
+    background-color: #fff;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    margin-top: -5px;
+}
+
+#toggle1:checked + .hamburger1 .bottom {
+    background-color: #fff;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+/* Hamburger Ends */
+
+/* ==========================================================================
+Animation System by Neale Van Fleet from Rogue Amoeba
+========================================================================== */
+.animate {
+    animation-duration: 0.75s;
+    animation-delay: 0.02s;
+    animation-name: animate-fade;
+    animation-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
+    animation-fill-mode: backwards;
+}
+
+/* Fade In */
+.animate.fade {
+    animation-name: animate-fade;
+    animation-timing-function: ease;
+}
+
+@keyframes animate-fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Pop In */
+.animate.pop {
+    animation-name: animate-pop;
+}
+
+@keyframes animate-pop {
+    0% {
+        opacity: 0;
+        transform: scale(0.5, 0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}
+
+/* Blur In */
+.animate.blur {
+    animation-name: animate-blur;
+    animation-timing-function: ease;
+}
+
+@keyframes animate-blur {
+    0% {
+        opacity: 0;
+        filter: blur(15px);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0px);
+    }
+}
+
+/* Glow In */
+.animate.glow {
+    animation-name: animate-glow;
+    animation-timing-function: ease;
+}
+
+@keyframes animate-glow {
+    0% {
+        opacity: 0;
+        filter: brightness(3) saturate(3);
+        transform: scale(0.8, 0.8);
+    }
+    100% {
+        opacity: 1;
+        filter: brightness(1) saturate(1);
+        transform: scale(1, 1);
+    }
+}
+
+/* Grow In */
+.animate.grow {
+    animation-name: animate-grow;
+}
+
+@keyframes animate-grow {
+    0% {
+        opacity: 0;
+        transform: scale(1, 0);
+        visibility: hidden;
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}
+
+/* Splat In */
+.animate.splat {
+    animation-name: animate-splat;
+}
+
+@keyframes animate-splat {
+    0% {
+        opacity: 0;
+        transform: scale(0, 0) rotate(20deg) translate(0, -30px);
+    }
+    70% {
+        opacity: 1;
+        transform: scale(1.1, 1.1) rotate(15deg);
+    }
+    85% {
+        opacity: 1;
+        transform: scale(1.1, 1.1) rotate(15deg) translate(0, -10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1, 1) rotate(0) translate(0, 0);
+    }
+}
+
+/* Roll In */
+.animate.roll {
+    animation-name: animate-roll;
+}
+
+@keyframes animate-roll {
+    0% {
+        opacity: 0;
+        transform: scale(0, 0) rotate(360deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1, 1) rotate(0deg);
+    }
+}
+
+/* Flip In */
+.animate.flip {
+    animation-name: animate-flip;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+@keyframes animate-flip {
+    0% {
+        opacity: 0;
+        transform: rotateX(-120deg) scale(0.9, 0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: rotateX(0deg) scale(1, 1);
+    }
+}
+
+/* Spin In */
+.animate.spin {
+    animation-name: animate-spin;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+@keyframes animate-spin {
+    0% {
+        opacity: 0;
+        transform: rotateY(-120deg) scale(0.9, 0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: rotateY(0deg) scale(1, 1);
+    }
+}
+
+/* Slide In */
+.animate.slide {
+    animation-name: animate-slide;
+}
+
+@keyframes animate-slide {
+    0% {
+        opacity: 0;
+        transform: translate(0, 20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+/* Drop In */
+.animate.drop {
+    animation-name: animate-drop;
+    animation-timing-function: cubic-bezier(0.77, 0.14, 0.91, 1.25);
+}
+
+@keyframes animate-drop {
+    0% {
+        opacity: 0;
+        transform: translate(0, -300px) scale(0.9, 1.1);
+    }
+    95% {
+        opacity: 1;
+        transform: translate(0, 0) scale(0.9, 1.1);
+    }
+    96% {
+        opacity: 1;
+        transform: translate(10px, 0) scale(1.2, 0.9);
+    }
+    97% {
+        opacity: 1;
+        transform: translate(-10px, 0) scale(1.2, 0.9);
+    }
+    98% {
+        opacity: 1;
+        transform: translate(5px, 0) scale(1.1, 0.9);
+    }
+    99% {
+        opacity: 1;
+        transform: translate(-5px, 0) scale(1.1, 0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1, 1);
+    }
+}
+
+/* Animation Delays */
+.delay-1 {
+    animation-delay: 0.04s;
+}
+.delay-2 {
+    animation-delay: 0.4s;
+}
+.delay-3 {
+    animation-delay: 0.8s;
+}
+.delay-4 {
+    animation-delay: 0.9s;
+}
+.delay-5 {
+    animation-delay: 1.3s;
+}
+.delay-6 {
+    animation-delay: 1.6s;
+}
+.delay-7 {
+    animation-delay: 1.9s;
+}
+.delay-8 {
+    animation-delay: 2.2s;
+}
+.delay-9 {
+    animation-delay: 2.5s;
+}
+.delay-10 {
+    animation-delay: 2.8s;
+}
+.delay-11 {
+    animation-delay: 3.1s;
+}
+.delay-12 {
+    animation-delay: 3.4s;
+}
+.delay-13 {
+    animation-delay: 3.7s;
+}
+.delay-14 {
+    animation-delay: 4s;
+}
+.delay-15 {
+    animation-delay: 4.3s;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    .animate {
+        animation: none !important;
+    }
+}
+/* Animation Ends */
+
+/* Tailwind Override Trix */
+trix-editor {
+    width: 100%;
+}
+
+trix-editor h1 {
+    font-size: 1.25rem !important;
+    line-height: 1.25rem !important;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+trix-editor a:not(.no-underline) {
+    text-decoration: underline;
+}
+
+trix-editor a:visited {
+    color: green;
+}
+
+trix-editor ul {
+    list-style-type: disc;
+    padding-left: 1rem;
+}
+
+trix-editor ol {
+    list-style-type: decimal;
+    padding-left: 1rem;
+}
+
+trix-editor pre {
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+    font-family: monospace;
+    font-size: 1.5em;
+    padding: 0.5em;
+    white-space: pre;
+    background-color: #eee;
+    overflow-x: auto;
+}
+
+trix-editor blockquote {
+    border: 0 solid #ccc;
+    border-left-width: 0px;
+    border-left-width: 0.3em;
+    margin-left: 0.3em;
+    padding-left: 0.6em;
+}
