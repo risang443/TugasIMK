@@ -14,54 +14,88 @@
   </head>
   <body>
     <!-- Header Start -->
-    <header class="bg-slate-400 absolute top-0 left-0 w-full flex items-center z-10">
-        <div class="container">
-            <div class="flex item-center justify-between relative">
-              <div class="px-4">
-                <a href="#home" class=" font-bold text-xl text-primary block py-6"
-                  >Logo</a>
-                </div>
-              <div class="flex items-center ">
-                <div class="float-right">
-                  <nav
-                id="nav-menu"
-                class="static md:max-w-[450px] w-full right-4 top-full block  lg:max-w-full"
+    <header
+      class="bg-prime absolute top-0 left-0 w-full flex items-center z-10"
+    >
+      <div class="container">
+        <div class="flex items-center justify-evenly relative">
+          <div class="px-4">
+            <a
+              href="#home"
+              class="font-bold text-lg text-text-second block py-6"
+              >Logo</a
+            >
+          </div>
+          <div class="flex items-center px-4">
+            <button
+              id="hamburger"
+              name="hamburger"
+              type="button"
+              class="block absolute right-4 lg:hidden"
+            >
+              <span
+                class="hamburger-line transition duration-300 ease-in-out origin-top-left"
+              ></span>
+              <span
+                class="hamburger-line transition duration-300 ease-in-out"
+              ></span>
+              <span
+                class="origin-bottom-left hamburger-line transition duration-300 ease-in-out"
+              ></span>
+            </button>
+
+            <nav
+              id="nav-menu"
+              class="hidden absolute py-5 bg-white shadow-lg rounded-lg md:max-w-[450px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none"
+            >
+              <ul class="block lg:flex">
+                <li class="group">
+                  <a
+                    href="#home"
+                    class="text-base text-text-second py-2 mx-5 flex group-hover:text-primary"
+                    >Home</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#about"
+                    class="text-base text-text-second py-2 mx-5 flex group-hover:text-primary"
+                    >About Us</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#"
+                    class="text-base text-text-second py-2 mx-5 flex group-hover:text-primary"
+                    >How It Works</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#"
+                    class="text-base text-text-second py-2 mx-5 flex group-hover:text-primary"
+                    >Urgent Calls</a
+                  >
+                </li>
+              </ul>
+            </nav>
+            <div
+              id="register-login"
+              class="flex text-text-second items-center mx-5 hidden lg:flex lg:static lg:static lg:inset-y-0 lg:right-0"
+            >
+              <a href="#">Tutorial</a><span class="mx-4">|</span>
+              <a href="#">Register</a>
+              <div
+                class="ml-5 bg-text-second text-text-prime rounded-lg px-6 py-2"
               >
-                <ul class="block lg:flex">
-                  <li class="group">
-                    <a
-                      href="#home"
-                      class="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
-                      >Beranda</a
-                    >
-                  </li>
-                  <li class="group">
-                    <a
-                      href="#about"
-                      class="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
-                      >Tentang Saya</a
-                    >
-                  </li>
-                  <li class="group">
-                    <a
-                      href="#gallery"
-                      class="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
-                      >Gallery</a
-                    >
-                  </li>
-                  <li class="group">
-                    <a
-                      href="#client"
-                      class="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
-                      >Client</a
-                    >
-                  </li>
-                </ul>
-              </nav>
-                </div>
-                <div class="float-right">
-                  <a href="#">Tutorial</a><span class="mx-6">|</span><a class="ml-5" href="#">Register</a><a class=" bg-button-second rounded-xl mx-5 py-3 px-8 hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out" href="#">Login</a></div>
+                <a class="font-bold" href="/build/html/login.html"
+                  >Log<span>in</span></a
+                >
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
     <!-- Header End -->
     <!-- Hero Start -->
@@ -69,31 +103,45 @@
       <div id="container">
         <div class="flex flex-wrap">
           <div class="w-full self-center px-6 lg:w-1/2">
-            <h2 class="text-bold text-text-prime font-normal my-4">
+            <h2 class="text-bold text-text-prime font-normal my-5">
               Jika Anda pernah menyaksikan atau menjadi korban kejahatan harap
               lapor kepada kami.
             </h2>
-            <h1 class="text-4xl text-text-prime font-extrabold my-4">
-              Lorem ipsum dolor sit amet, consectetur
+            <h1 class="text-4xl text-text-prime font-extrabold my-5">
+              Laporan Anda Sangat Berharga
             </h1>
-            <p class="text-base font-base text-text-prime mt-5 mb-8">
+            <p class="text-base font-base text-text-prime mt-5 mb-10">
               Laporan ditangani oleh ruang kendali kami dengan cara yang persis
               sama, baik Anda melaporkannya secara online atau melalui telepon.
             </p>
-            <a
-              href="#"
-              class="text-base w-[150px] bg-button-second font-semibold text-text-prime my-3 py-3 px-8 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out"
-              >Buat Laporan</a
-            >
-            <a
-              href="#"
-              class="text-base w-[150px] bg-button-prime font-semibold text-text-prime my-3 py-3 px-8 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out"
-              >Kerja Kami</a
-            >
+            <div class="mx-4 my-36 w-auto">
+              <a
+                href="#"
+                class="text-base w-[150px] bg-button-second font-semibold text-text-prime my-3 py-3 px-8 rounded-md hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out"
+                >Buat Laporan</a
+              >
+              <a
+                href="#"
+                class="text-base w-[150px] bg-button-prime font-semibold text-text-prime my-3 py-3 px-8 rounded-md hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out"
+                >Kerja Kami</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="w-full self-end px-4 lg:w-1/2">
+          <div class="mt-10 relative lg:mt-9 lg:right-0">
+            <img
+                src="https://source.unsplash.com/360x200?goverment"
+                alt="Programing"
+                height="400"
+                width="400"
+              />
           </div>
         </div>
       </div>
     </section>
     <!-- Hero End -->
+    <!-- Script -->
+    <script src="/build/js/script.js"></script>
   </body>
 </html>
