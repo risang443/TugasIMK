@@ -8,7 +8,7 @@ module.exports = {
         "text-second": "#FEB913",
         "button-prime": "#D80000",
         "button-second": "#FEB913",
-        "prime":"#18191A"
+        "prime":"#292B35"
       },
       fontFamily: {
         pop: ["Poppins"],

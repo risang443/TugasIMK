@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Landing Page</title>
+    <title>Lapor.in</title>
     <link rel="stylesheet" href="/build/css/output.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,14 +15,14 @@
   <body>
     <!-- Header Start -->
     <header
-      class="bg-prime absolute top-0 left-0 w-full flex items-center z-10"
+      class="bg-prime sticky w-full z-10 h-[100px] flex items-center"
     >
       <div class="container">
-        <div class="flex items-center justify-evenly relative">
+        <div class="flex items-center justify-between relative">
           <div class="px-4">
             <a
               href="#home"
-              class="font-bold text-lg text-text-second block py-6"
+              class="font-bold text-2xl text-text-second block py-6"
               >Logo</a
             >
           </div>
@@ -81,7 +81,7 @@
             </nav>
             <div
               id="register-login"
-              class="text-text-second items-center mx-5 hidden lg:flex lg:static lg:inset-y-0 lg:right-0"
+              class="flex text-text-second items-center mx-5 hidden lg:flex lg:static lg:static lg:inset-y-0 lg:right-0"
             >
               <a href="#">Tutorial</a><span class="mx-4">|</span>
               <a href="#">Register</a>
@@ -99,70 +99,99 @@
     </header>
     <!-- Header End -->
     <!-- Hero Start -->
-    <section id="hero" class="pt-36">
-      <div id="container">
-        <div class="flex flex-wrap">
-          <div class="w-full self-center px-10 lg:w-1/2">
-            <h2 class="text-bold text-text-prime font-normal my-5">
-              Jika Anda pernah menyaksikan atau menjadi korban kejahatan harap
-              lapor kepada kami.
-            </h2>
-            <h1 class="text-4xl text-text-prime font-extrabold my-5">
-              Mengubah Kejahatan Menjadi Keamanan,
-              <span class="text-text-second">Satu Laporan pada Saatnya</span>
-            </h1>
-            <p class="text-base font-base text-text-prime mt-5 mb-10">
-              Laporan ditangani oleh ruang kendali kami dengan cara yang persis
-              sama, baik Anda melaporkannya secara online atau melalui telepon.
+    <section id="hero" class="pt-20">
+      <div id="container" class="flex w-full">
+        <div id="text" class="justify-start container lg:w-1/2 pt-16">
+          <div class="tracking-wider">
+            <p>
+              Jika Anda pernah menyaksikan atau menjadi korban kejahatan harap lapor kepada kami.
             </p>
-            <div class="mx-4 my-28 w-auto inline-block lg:block">
-              <a
-                href="#"
-                class="text-base w-[150px] bg-button-second font-semibold text-text-prime my-3 py-3 px-8 mx-3 rounded-md hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out"
-                >Buat Laporan</a
-              >
-              <a
-                href="#"
-                class="text-base w-[150px] bg-button-prime font-semibold text-text-prime my-3 py-3 px-8 ml-3 rounded-md hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out"
-                >Kerja Kami</a
-              >
-            </div>
+            <h1 class="text-6xl font-extrabold py-4">
+              Lorem ipsum dolor sit amet consectetur.
+            </h1>
+            <p class="text-prime/90">
+              Laporan ditangani oleh ruang kendali kami dengan cara yang persis sama, baik Anda melaporkannya secara online atau melalui telepon.
+            </p>
           </div>
-          <div
-            class="w-full p-6 self-center justify-center items-center lg:w-1/2"
-          >
-            <div class="relative lg:mt-9 lg:right-0">
-              <img
-                src="/build/media/asset1.jpeg"
-                alt="Programing"
-                height="600"
-                width="600"
-                class="rounded-tl-lg border-slate-950 border-8"
-              />
-            </div>
+          <div id="buttons" class="flex flex-row mt-28 gap-x-10">
+            <a href="/" class="buttons bg-button-second shadow-xl">
+              <p>Buat Laporan</p>
+            </a>
+            <a href="" class="buttons">
+              <p>Kerja Kami</p>
+            </a>
           </div>
+
+        </div>
+        <div id="image" class="h-[680px] lg:w-1/2 bg-slate-500 overflow-hidden rounded-l-[63px] -z-10">
+          <img src="/build/media/asset1.jpeg" alt="" class="h-full opacity-30 -z-10">
         </div>
       </div>
     </section>
     <!-- Hero End -->
-    <!-- About Start -->
-    <section id="about" class="pt-36 pb-32">
-      <div id="container">
-        <div class="flex flex-wrap">
-          <div class="w-full px-10 mb-10 justify-center">
-            <h2 class="text-center text-4xl font-bold">
-              Bagaimana Cara Kami Bekerja ?
-            </h2>
-            <h4 class="text-sm text-center text-stone-700 text-center">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus, perferendis!
-            </h4>
+    <!-- Bagaimana Start -->
+    <section id="bagaimana" class="w-full pb-16">
+      <div class="container">
+        <div id="seachBar" class="bg-prime -mt-16  overflow-hidden rounded-lg py-10 flex flex-row gap-x-28 text-white container items-center z-10">
+          <div>
+            <p>
+              Lorem.
+            </p>
+          </div>
+          <span class="text-3xl font-extralight">|</span>
+          <div>
+            <p>
+              Lorem.
+            </p>
+          </div>
+          <span class="text-3xl font-extralight">|</span>
+          <div>
+            <p>
+              Lorem.
+            </p>
+          </div>
+          <div class="w-full">
+        <input type="text" id="cari" class="bg-white border border-gray-300 text-prime text-sm text-center rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Cari">
+            </label>
+          </div>
+        </div>
+        <div class="mt-20 text-center break-all">
+          <h1 class="text-4xl font-semibold pb-2">Bagaimana Cara Kami Bekerja?</h1>
+          <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem tempore facilis nostrum soluta, veritatis esse velit laborum doloribus dolor facere.</p>
+        </div>
+        <div class="grid grid-cols-3 justify-items-center h-52 py-14 gap-x-24">
+          <div class="text-center">
+            <div class="w-52 text-center overflow-hidden pb-4">
+              <img src="/build/media/stock.jpg" alt="">
+            </div>
+            <div>
+              <h2 class="text-xl font-semibold py-2">Menerima Laporan Anda</h2>
+              <p>[Jelasin ke user/customer ngelapor  di sini bisa lgsg telf atau melalui form biar lbh rinci. gada biaya layanan dan bakal dikerjain cepet oleh program kita]</p>
+            </div>
+          </div>
+          <div class="text-center">
+            <div class="w-52 text-center overflow-hidden pb-4">
+              <img src="/build/media/stock.jpg" alt="">
+            </div>
+            <div>
+              <h2 class="text-xl font-semibold py-2">Menerima Laporan Anda</h2>
+              <p>[Jelasin ke user/customer ngelapor  di sini bisa lgsg telf atau melalui form biar lbh rinci. gada biaya layanan dan bakal dikerjain cepet oleh program kita]</p>
+            </div>
+          </div>
+          <div class="text-center">
+            <div class="w-52 text-center overflow-hidden pb-4">
+              <img src="/build/media/stock.jpg" alt="">
+            </div>
+            <div>
+              <h2 class="text-xl font-semibold py-2">Menerima Laporan Anda</h2>
+              <p>[Jelasin ke user/customer ngelapor  di sini bisa lgsg telf atau melalui form biar lbh rinci. gada biaya layanan dan bakal dikerjain cepet oleh program kita]</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- About End -->
+    <!-- Bagaimana End -->
     <!-- Script -->
-    <script src="/build/js/script.js"></script>
+    <!-- <script src="/build/js/script.js"></script> -->
   </body>
 </html>
