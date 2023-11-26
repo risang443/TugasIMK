@@ -1,5 +1,9 @@
 {
   "devDependencies": {
     "tailwindcss": "^3.3.5"
+  },
+  "dependencies": {
+    "boxicons": "^2.1.4",
+    "feather-icons": "^4.29.1"
   }
 }
