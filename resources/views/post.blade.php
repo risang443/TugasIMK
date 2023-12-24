@@ -1,7 +1,50 @@
 @extends('layouts.main')
 @section('container')
 
-<section id="post" class="bg-secondary text-hitam">
+<section id="post" class="text-white">
+  <div class="flex flex-col py-16 container">
+    <div class="flex flex-col justify-center items-center text-prime mb-10">
+      <h1>Laporan Berita</h1>
+      <p>Berbagai laporan dan pengaduan yang pihak kami terima, telah dicatat ke dalam data.</p>
+    </div>
+    @if ($post->images)
+        <div id="postGambar">
+          <div class="carousel carousel-main overflow-hidden rounded-lg" data-flickity='{ "adaptiveHeight": true, "fade": true, "imagesLoaded": true, "autoPlay": 2000, "pauseAutoPlayOnHover": false }'>
+            @foreach($post->images as $image)
+            <div class="carousel-post max-h-[40vh] flex items-center ">
+              <img src="{{ asset('/storage/' . $image) }}" alt="multiple image"
+                class="carousel-post-image rounded-lg" >
+            </div>
+            @endforeach
+          </div>
+          <div class="carousel carousel-nav overflow-hidden pt-2" data-flickity='{"asNavFor": ".carousel-main", "contain": true, "pageDots": false}'>
+            @foreach($post->images as $image)
+            <div class="carousel-post">
+              <img src="{{ asset('/storage/' . $image) }}" alt="multiple image"
+                class="carousel-post-image rounded-lg">
+            </div>
+            @endforeach
+          </div>
+        </div>
+      @else
+    @endif
+    <div class="p-10 bg-[#19323C] h-auto rounded-xl">
+      <div class="flex flex-col gap-4">
+        <h2>{{ $post->title }}</h2>
+        <h3>Status Laporan : {{$post->category->name}}</h3>
+        <p>Rincian Laporan :</p>
+        <trix-editor class="leading-none my-5">
+          <p>{!! $post->body !!}</p>
+        </trix-editor>
+        <p>Tanggal Laporan Diterima : {{ $post->created_at->diffForHumans() }}</p>
+        <p>Pembuat Laporan : {{$post->author->name}}</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+{{-- <section id="post" class="bg-secondary text-hitam">
   <div class="w-full bg-primary h-[10vh] md:h-[12vh] overflow-hidden relative">
     <div class="duration-700 ease-in-out" data-carousel-item>
       @if($post->images)
@@ -62,7 +105,7 @@
       </trix-editor>
     </div>
   </section>
-</section>
+</section> --}}
 
 
 @endsection

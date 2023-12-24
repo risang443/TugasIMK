@@ -70,6 +70,21 @@ h2{
   }
 }
 
+.carousel-nav .carousel-post {
+  height: 80px;
+  width: 100px;
+  opacity: 70%;
+}
+
+.carousel-nav .carousel-post:before {
+  font-size: 50px;
+  line-height: 80px;
+}
+
+.carousel-nav .carousel-post.is-nav-selected {
+  opacity: 100%;
+}
+
 
 /* Tailwind Override Trix */
 trix-editor {

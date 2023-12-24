@@ -105,7 +105,7 @@
       </div>
       <div class="p-6 bg-white rounded-lg h-[53vh] w-[40vh] flex flex-col justify-between">
         @if($posts[1]->images)
-          <img src="{{ asset('storage/' . $posts[1]->images[1]) }}" alt="{{ $posts[1]->title }}" class="h-[36vh] w-[36vh] object-cover group-hover:scale-105 transition duration-200 ease-in-out">
+          <img src="{{ asset('storage/' . $posts[1]->images[0]) }}" alt="{{ $posts[1]->title }}" class="h-[36vh] w-[36vh] object-cover group-hover:scale-105 transition duration-200 ease-in-out">
         @else           
           <img class="h-[36vh] w-[36vh] object-cover group-hover:scale-105 transition duration-200 ease-in-out" src="https://source.unsplash.com/800x600/?{{ $posts[1]->title }}" alt="{{ $posts[1]->title }}">
         @endif
@@ -120,7 +120,7 @@
       </div>
       <div class="p-6 bg-white rounded-lg h-[53vh] w-[40vh] flex flex-col justify-between">
         @if($posts[2]->images)
-          <img src="{{ asset('storage/' . $posts[2]->images[2]) }}" alt="{{ $posts[2]->title }}" class="h-[36vh] w-[36vh] object-cover group-hover:scale-105 transition duration-200 ease-in-out">
+          <img src="{{ asset('storage/' . $posts[2]->images[0]) }}" alt="{{ $posts[2]->title }}" class="h-[36vh] w-[36vh] object-cover group-hover:scale-105 transition duration-200 ease-in-out">
         @else           
           <img class="h-[36vh] w-[36vh] object-cover group-hover:scale-105 transition duration-200 ease-in-out" src="https://source.unsplash.com/800x600/?{{ $posts[2]->title }}" alt="{{ $posts[2]->title }}">
         @endif

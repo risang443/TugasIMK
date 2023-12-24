@@ -37,17 +37,6 @@ Route::get('/', function () {
 });
 
 
-Route::get('/aktivitas', [PostController::class, 'aktivitas']);
-
-Route::get('/informasi', [PostController::class, 'informasi']);
-
-
-Route::get('/program', function(){
-    return view('program',[
-        "title" => "Program"
-    ]);
-});
-
 Route::get('/blog', [PostController::class, 'blog']);
 
 Route::get('/login',[LoginController::class, 'index'])->name('login')->middleware('guest');
