@@ -5,10 +5,10 @@
     <div class="md:container md:mx-auto mx-2">
         <div class=" bg-secondary rounded-lg flex flex-col items-center py-7 justify-center px-4">
             <div>
-                <h1 class="font-semibold text-sm  md:text-base text-hitam/80  text-center uppercase tracking-wide py-2">Selamat datang di {{ $title }} Al Khoir</h1> 
+                <h1 class="font-semibold text-sm  md:text-base text-hitam/80  text-center uppercase tracking-wide py-2">Selamat datang di {{ $title }} Laporin</h1> 
             </div>
             <div>
-                <h1 class="text-xl  md:text-3xl font-bold text-center">Menampilkan <span class="text-primary logo">{{ ($title === "Aktivitas") ? '📷' : '📣' }} {{ $title }}</span> terbaru terkait <span class="text-primary logo">Al Khoir</span></h1>
+                <h1 class="text-xl  md:text-3xl font-bold text-center">Menampilkan <span class="text-primary logo">{{ ($title === "Aktivitas") ? '📷' : '📣' }} {{ $title }}</span> terbaru terkait <span class="text-primary logo">Laporin</span></h1>
             </div>
         </div>
     </div>

@@ -20,6 +20,13 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->string('images')->nullable();
+            $table->string('namad');
+            $table->string('namab');
+            $table->string('nik');
+            $table->string('ttl');
+            $table->string('email');
+            $table->string('notelp');
+            $table->string('alamat');
             $table->text('excerpt');
             $table->text('body');
             $table->timestamp('published_at')->nullable();

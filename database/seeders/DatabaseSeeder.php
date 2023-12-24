@@ -24,34 +24,32 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('password33')
         ]);
 
+        User::factory(5)->create();
+
 
         // User::factory(3)->create();
 
         Category::create([
-            'name' => 'Aktivitas',
-            'slug' => 'aktivitas',
+            'name' => 'Diproses',
+            'slug' => 'diproses',
         ]);
 
         Category::create([
-            'name' => 'Orang Tua',
-            'slug' => 'orang-tua',
+            'name' => 'Ditangani',
+            'slug' => 'ditangani',
         ]);
 
         Category::create([
-            'name' => 'Blog',
-            'slug' => 'blog',
+            'name' => 'Selesai',
+            'slug' => 'selesai',
         ]);
 
         Category::create([
-            'name' => 'Murid',
-            'slug' => 'murid',
-        ]);
-        Category::create([
-            'name' => 'Informasi',
-            'slug' => 'informasi',
+            'name' => 'Terkirim',
+            'slug' => 'terkirim',
         ]);
 
-        // Post::factory(20)->create();
+        Post::factory(20)->create();
 
        
     }

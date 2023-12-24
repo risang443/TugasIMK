@@ -9,20 +9,21 @@ module.exports = {
     ],
     theme: {
         fontFamily: {
-            serif: ["Lato"],
-        },
+            pop: ["Poppins"],
+          },
         container: {
             center: true,
             padding: "16px",
         },
         extend: {
             colors: {
-                primary: "#0f4c82",
-                secondary: "#F1F2F6",
-                detail: "#DA4167",
-                hitam: "#292929",
-                buttonh: "#26A96C",
-                button: "#0f4c82",
+                "text-prime": "#1A202C",
+                "text-second": "#FEB913",
+                "button-prime": "#FEB913",
+                "button-second": "#BFE1F1",
+                "prime":"#292B35",
+                "secondary" : "#14272E",
+                "merah" : "#D80000",
             },
             screens: {
                 sm: "640px",
@@ -39,6 +40,8 @@ module.exports = {
     },
     plugins: [
         require("tw-elements/dist/plugin.cjs"),
-        require("flowbite/plugin"),
+        require('flowbite/plugin')({
+            charts: true,
+        }),
     ],
 };

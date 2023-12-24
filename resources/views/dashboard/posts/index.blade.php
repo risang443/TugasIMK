@@ -11,26 +11,16 @@
 </div>
 @endif
 
-<div class="bg-white shadow rounded-t-lg border-b p-4">
-   <div class="grid grid-cols-2 items-center justify-center">
-      <div class="grid grid-rows-2 justify-self-start">
-            <h1 class="font-extrabold text-5xl text-hitam">Post.</h1>
-            <p class="text-hitam/60">Tambahkan, Edit, dan Publish Postingan disini.</p>
-      </div>
-      <div class="justify-self-end">
-         <a href="/dashboard/posts/create">
-            <div class="md:text-3xl text-lg rounded-lg font-bold py-1 px-2 bg-primary text-white hover:bg-buttonh transition duration-200 ease-in">
-               <p>+<span class=""> New Post</span></p>
-            </div>
-         </a>
-      </div>
-   </div>
+<div class="mt-[2vh] py-[4vh] bg-white flex flex-col items-center text-center">
+   <h1>Status Laporan Anda</h1>
+   <p>Cek status laporan anda secara berkala!</p>
+
 </div>
 
-<main>
-   <div class="pt-6 px-4">
+<main class="my-[2vh] container">
+   <div class="bg-white ">
       <div class="w-full grid grid-cols-1 gap-4">
-         <div class="bg-white shadow rounded-t-lg border-b p-4">
+         <div class="bg-white">
             <div class="flex flex-col">
                <div class="overflow-x-auto rounded-lg">
                   <div class="align-middle inline-block min-w-full">
@@ -42,23 +32,23 @@
                                     No.
                                  </th>
                                  <th scope="col" class="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    Title
+                                    Judul Laporan
                                  </th>
                                  <th scope="col" class="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    Category
+                                    Status Laporan
                                  </th>
                                  <th scope="col" class="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    Action
+                                    Aksi
                                  </th>
                               </tr>
                            </thead>
-                           <tbody class="bg-white divide-y divide-gray-200">
+                           <tbody class="bg-white divide-y divide-gray-200 [&>*:nth-child(even)]:bg-white [&>*:nth-child(odd)]:bg-prime/10">
                               @foreach ($posts->reverse() as $post)
                               <tr>
                                  <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-900">
                                     {{ $loop->iteration }}
                                  </td>
-                                 <td class="p-4 whitespace-nowrap text-sm text-gray-900 font-semibold">
+                                 <td class="p-4 whitespace-nowrap text-sm text-gray-900 font-semibold ">
                                     {{ $post->title }}
                                  </td>
                                  <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-500">
@@ -93,4 +83,6 @@
             </div>
          </div>
       </div>
+   </div>
+</main>
 @endsection

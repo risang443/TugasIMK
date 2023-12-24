@@ -21,25 +21,21 @@ use App\Http\Controllers\DashboardPostController;
 |
 */
 
+Route::get('/storage-link/', function(){
+    $targetFolder = base_path().'storage/app/public';
+    $linkFolder = $_SERVER['DOCUMENT_ROOT'].'/storage';
+    symlink($targetFolder, $linkFolder);
+});
+
 Route::get('/', function () {
     return view('home', [
-        "title" => "Al Khoir",
+        "title" => "Laporin",
         // "posts" => Post::where('category_id', 1)->get()
         "posts" => Post::latest()->where('category_id',1)->get(),
         "informasi" => Post::latest()->where('category_id',5)->get()
     ]);
 });
 
-// Route::get('/about', function () {
-//     return view('about', [
-//         "title" => "About",
-//         "name" => "Farhan Aufar",
-//         "email" => "farhanaufarr@gmail.com",
-//     ]);
-// });
-
-
-// Route::get('/posts', [PostController::class, 'index']);
 
 Route::get('/aktivitas', [PostController::class, 'aktivitas']);
 
@@ -59,13 +55,15 @@ Route::post('/login',[LoginController::class, 'authenticate']);
 Route::post('/logout',[LoginController::class, 'logout']);
 
 // Register Mati
-// Route::get('/register',[RegisterController::class, 'index'])->middleware('guest');
+Route::get('/register',[RegisterController::class, 'index'])->middleware('guest');
 
-// Route::post('/register',[RegisterController::class, 'store']);
+Route::post('/register',[RegisterController::class, 'store']);
 // Register Mati Ends
 
 Route::get('/dashboard',function(){
-    return view('dashboard.index');
+    return view('dashboard.index',[
+        "title" => "Laporan",
+    ]);
 })->middleware('auth');
 
 Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');

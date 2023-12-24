@@ -9,7 +9,7 @@ class RegisterController extends Controller
 {
     public function index(){
         return view('register.index',[
-            'title' => 'register',
+            'title' => 'Register',
         ]);
     }
 
@@ -19,6 +19,8 @@ class RegisterController extends Controller
             'username' => ['required', 'min:3','max:255','unique:users'],
             'email' => ['required', 'email:dns', 'unique:users', ],
             'password' => ['required', 'min:5', 'max:255'],
+            'password_confirmation' => ['min:5','required','same:password'],
+
         ]);
 
         $validatedData['password'] = bcrypt($validatedData['password']);

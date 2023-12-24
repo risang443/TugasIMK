@@ -18,8 +18,15 @@ class DashboardPostController extends Controller
      */
     public function index()
     {
+        if(auth()->user()->is_admin){
+            return view('dashboard.posts.index', [
+                'posts' => Post::latest()->get(),
+                'title' => 'Laporan',
+            ]);
+        }
         return view('dashboard.posts.index', [
-            'posts' => Post::where('user_id', auth()->user()->id)->get()
+            'posts' => Post::where('user_id', auth()->user()->id)->get(),
+            'title' => 'Laporan',
         ]);
     }
 
@@ -31,7 +38,8 @@ class DashboardPostController extends Controller
     public function create()
     {
         return view('dashboard.posts.create',[
-            'categories' => Category::all()
+            'categories' => Category::all(),
+            'title' => 'Buat Laporan',
         ]);
     }
 
@@ -49,6 +57,13 @@ class DashboardPostController extends Controller
             'slug' => 'required|unique:posts',
             'category_id' => 'required',
             'images' => 'array',
+            'namad' => 'required',
+            'namab' => 'required',
+            'nik' => 'required',
+            'ttl' => 'required',
+            'email' => 'required',
+            'notelp' => 'required',
+            'alamat' => 'required',
             'body' => 'required'
         ]);
 
@@ -69,7 +84,7 @@ class DashboardPostController extends Controller
         $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200);
 
         Post::create($validatedData);
-        return redirect('/dashboard/posts')->with('success','New Post has been published');
+        return redirect('/dashboard')->with('success','Terima kasih! Data Anda Berhasil Terkirim');
 
     }
 
@@ -96,6 +111,7 @@ class DashboardPostController extends Controller
     {
         return view('dashboard.posts.edit',[
             'post' => $post,
+            'title' => $post->title,
             'categories' => Category::all()
         ]);
     }
@@ -111,8 +127,16 @@ class DashboardPostController extends Controller
     {
         $rules = [
             'title' => 'required|max:255',
+            'slug' => 'required|unique:posts',
             'category_id' => 'required',
-            'images' => 'array',
+            // 'images' => 'array',
+            'namad' => 'required',
+            'namab' => 'required',
+            'nik' => 'required',
+            'ttl' => 'required',
+            'email' => 'required',
+            'notelp' => 'required',
+            'alamat' => 'required',
             'body' => 'required'
         ];
 
@@ -122,21 +146,21 @@ class DashboardPostController extends Controller
 
         $validatedData = $request->validate($rules);
 
-        $images = [];
+        // $images = [];
 
-        if($request->file('images')){
-            if($post->images){
-                Storage::delete($post->images);
-            }
-            foreach ($validatedData['images'] as $image) {
-                $fileName = uniqid() . '.' . $image->getClientOriginalExtension();
-                $image_path =  $image->storeAs('post-images', $fileName,'public');
+        // if($request->file('images')){
+        //     if($post->images){
+        //         Storage::delete($post->images);
+        //     }
+        //     foreach ($validatedData['images'] as $image) {
+        //         $fileName = uniqid() . '.' . $image->getClientOriginalExtension();
+        //         $image_path =  $image->storeAs('post-images', $fileName,'public');
     
-                array_push($images, $image_path);
-            }
-        }
+        //         array_push($images, $image_path);
+        //     }
+        // }
 
-        $validatedData['images'] = $images;
+        // $validatedData['images'] = $images;
 
         $validatedData['user_id'] = auth()->user()->id;
         $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200);

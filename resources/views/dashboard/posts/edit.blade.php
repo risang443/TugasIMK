@@ -1,58 +1,112 @@
 @extends('dashboard.layouts.main')
 @section('container')
 
-<div class="pt-6 px-4">
-    <div class="w-full grid grid-cols-1">
-       <div class="bg-white shadow rounded-lg p-4 border-b">
-          <div class="flex items-center justify-between mb-4">
-             <div class="flex-shrink-0">
-                <span class="text-2xl sm:text-3xl leading-none font-bold text-gray-900">Editing Post</span>
-                <h3 class="text-base font-normal text-gray-500">Edit, upload, and publish posts here.</h3>
-             </div>
-          </div>
-       </div>
-    </div>
- </div>
-
     <div class="pt-6 px-4">
         <div class="bg-white shadow rounded-lg p-4 border-b">
             <form method="post" action="/dashboard/posts/{{ $post->slug }}" enctype="multipart/form-data">
                 @method('put')
                 @csrf
-                <div class="space-y-6">
-                    <div>
-                        <label for="title" class="text-sm text-gray-700 block mb-1 font-medium">Title</label>
-                        <input type="text" value="{{ old('title', $post->title) }}" autofocus required name="title" id="title" class="@error('title')peer-invalid:visible border-red-700 @enderror peer bg-gray-50 border border-gray-200 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full"/>
+                <div class="grid grid-cols-2 gap-x-5">
+                    <div class="flex flex-col gap-y-5">
+                        <div>
+                            <input type="text" value="{{ old('namad', $post->namad) }}" autofocus required name="namad" id="namad" placeholder="Nama Depan" class="@error('namad')peer-invalid:visible border-red-700 @enderror peer bg-white border border-prime rounded py-3 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full"/>
+                            @error('namad')
+                            <p class="peer-invalid:visible text-red-700">
+                                {{ $message }}
+                            </p>
+                            @enderror
+                        </div>
+                        <div>
+                            <input type="text" value="{{ old('nik', $post->nik) }}" autofocus required name="nik" id="nik" placeholder="Nomor Induk Kependudukan (NIK)" class="@error('nik')peer-invalid:visible border-red-700 @enderror peer bg-white border border-prime rounded py-3 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full"/>
+                            @error('nik')
+                            <p class="peer-invalid:visible text-red-700">
+                                {{ $message }}
+                            </p>
+                            @enderror
+                        </div>
+                        <div>
+                            <input type="text" value="{{ old('email', $post->email) }}" autofocus required name="email" id="email" placeholder="Alamat Email" class="@error('email')peer-invalid:visible border-red-700 @enderror peer bg-white border border-prime rounded py-3 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full"/>
+                            @error('email')
+                            <p class="peer-invalid:visible text-red-700">
+                                {{ $message }}
+                            </p>
+                            @enderror
+                        </div>
+                        <div>
+                            <input type="text" value="{{ old('alamat', $post->alamat) }}" autofocus required name="alamat" id="alamat" placeholder="Alamat Rumah" class="@error('alamat') peer-invalid:visible border-red-700 @enderror peer bg-white border border-prime rounded py-3 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full h-[15vh]"/>
+                            @error('alamat')
+                            <p class="peer-invalid:visible text-red-700">
+                                {{ $message }}
+                            </p>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-y-5 ">
+                        <div>
+                            <input type="text" value="{{ old('namab', $post->namab) }}" autofocus required name="namab" id="namab" placeholder="Nama Belakang" class="@error('namab')peer-invalid:visible border-red-700 @enderror peer bg-white border border-prime rounded py-3 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full"/>
+                            @error('namab')
+                            <p class="peer-invalid:visible text-red-700">
+                                {{ $message }}
+                            </p>
+                            @enderror
+                        </div>
+                        <div>
+                            <input type="text" value="{{ old('ttl', $post->ttl) }}" autofocus required name="ttl" id="ttl" placeholder="Tanggal Lahir" class="@error('ttl')peer-invalid:visible border-red-700 @enderror peer bg-white border border-prime rounded py-3 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full"/>
+                            @error('ttl')
+                            <p class="peer-invalid:visible text-red-700">
+                                {{ $message }}
+                            </p>
+                            @enderror
+                        </div>
+                        <div>
+                            <input type="text" value="{{ old('notelp', $post->notelp) }}" autofocus required name="notelp" id="notelp" placeholder="Nomor Telepon" class="@error('notelp')peer-invalid:visible border-red-700 @enderror peer bg-white border border-prime rounded py-3 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full"/>
+                            @error('notelp')
+                            <p class="peer-invalid:visible text-red-700">
+                                {{ $message }}
+                            </p>
+                            @enderror
+                        </div>
+                        <div>
+                            <input type="text" value="{{ old('slug', $post->slug) }}" name="slug" id="slug" placeholder="Slugs" class="hidden focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full"/>
+                            @error('slug')
+                            <p class="peer-invalid:visible text-red-700">
+                                {{ $message }}
+                            </p>
+                            @enderror
+                        </div>
+                        <div>
+                            <select id="category" name= "category_id" class="hidden bg-white border border-prime rounded py-3 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full">
+                                @foreach ($categories as $category)
+                                @if(old('category_id', $post->category) == $category->id)
+                                <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
+                                @else
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endif
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="pt-8 pb-5">
+                        <h2 class="font-bold text-lg">Rincian Pengaduan</h2>
+                    </div>
+                    <div class="pb-5">
+                        <input type="text" value="{{ old('title', $post->title) }}" autofocus required name="title" id="title" placeholder="Judul Laporan" class="@error('title')peer-invalid:visible border-red-700 @enderror peer bg-white border border-prime rounded py-3 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full"/>
                         @error('title')
                         <p class="peer-invalid:visible text-red-700">
                             {{ $message }}
                         </p>
                         @enderror
                     </div>
-                    <div>
-                        <label for="slug" class=" text-sm text-gray-700 block mb-1 font-medium">Slug</label>
-                        <input type="text" value="{{ old('slug', $post->slug) }}" name="slug" id="slug" class="peer bg-gray-50 border border-gray-200 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full"/>
-                        @error('slug')
-                        <p class="peer-invalid:visible text-red-700">
-                            {{ $message }}
-                        </p>
-                        @enderror
-                    </div>
-                    <div>
-                        <label for="category" class="text-sm text-gray-700 block mb-1 font-medium">Category</label>
-                        <select id="category" name= "category_id" class="bg-gray-50 border border-gray-200 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full">
-                            @foreach ($categories as $category)
-                            @if(old('category_id', $post->category_id) == $category->id)
-                            <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
-                            @else
-                            <option value="{{ $category->id }}">{{ $category->name }}</option>
-                            @endif
-                            @endforeach
-                        </select>
-                    </div>
-
+                    <input id="body" type="hidden" name="body" value="{{ old('body', $post->body) }}">
+                    <trix-editor input="body" class="peer bg-white border border-prime rounded py-3 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full h-[35vh] overflow-auto"></trix-editor>
+                    @error('body')<p class="peer-invalid:visible text-red-700">{{ $message }}</p>@enderror
+                </div>
+                <div class="py-5">
                     <div>
                         <label class="block" for="images">
+                            
                             @if($post->images)
                             @foreach ($post->images as $image)
                             <div class="images-preview-div w-1/3 grid grid-cols-5 gap-2"><img src="{{ asset('/storage/' . $image) }}" alt=""></div>
@@ -60,30 +114,27 @@
                             @else
                             <div class="images-preview-div w-1/3 grid grid-cols-5 gap-2"></div>
                             @endif
-                            <input multiple type="file" id="images" name="images[]" onchange="previewImage()" class="@error('images')peer-invalid:visible file:text-red-700 file:bg-red-50 file:border-red-700 @enderror peer block w-full text-sm text-slate-500
-                            file:mr-4 file:py-2 file:px-4
-                            file:rounded-lg file:border-0
-                            file:text-sm file:font-semibold
-                            file:bg-blue-500 file:text-white
-                            hover:file:bg-blue-600
-                        "/>
-                        @error('images')
-                        <p class="peer-invalid:visible text-red-700">
-                            {{ $message }}
-                        </p>
-                        @enderror
+                            <div class="flex items-center justify-center w-full">
+                                <label for="image" class="flex flex-col items-center justify-center w-full h-64 border-2 border-prime border-dashed rounded-lg cursor-pointer bg-prime/5">
+                                   
+                                    <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                        <img src="/images/Upload.png" alt="" class="pb-4">
+                                        <p class="mb-2 text-lg font-semibold text-gray-500">Seret & Lepas file atau Telusuri</p>
+                                        <p class="text-sm text-gray-500">Format yang didukung : JPEG, PNG, GIF, MP4, PDF.</p>
+                                    </div>
+                                    <input multiple type="file" id="image" name="images[]" onchange="previewImages()" class="@error('images')peer-invalid:visible file:text-red-700 file:bg-red-50 file:border-red-700 @enderror peer hidden" />
+                                </label>
+                            </div> 
+                            @error('image')
+                            <p class="peer-invalid:visible text-red-700">
+                                {{ $message }}
+                            </p>
+                            @enderror
                         </label>
                     </div>
-
-                    <div>
-                        <label for="body" class=" text-sm text-gray-700 block mb-1 font-medium">Body</label>
-                        <input id="body" type="hidden" name="body" value="{{ old('body', $post->body) }}">
-                        <trix-editor input="body" class="trix-editor bg-gray-50 peer"></trix-editor>
-                        @error('body')<p class="peer-invalid:visible text-red-700">{{ $message }}</p>@enderror
-                    </div>
                 </div>
-                <button type="submit" class="mt-4 py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600 active:bg-blue-700 disabled:opacity-50">
-                    Update Post
+                <button type="submit" class="buttons w-[18vh] bg-button-prime text-prime">
+                    Kirim
                 </button>
             </form>
         </div>
@@ -133,7 +184,7 @@ var previewImages = function(input, imgPreviewPlaceholder) {
         }
     }
 };
-$('#images').on('change', function() {
+$('#image').on('change', function() {
 
     previewImages(this, 'div.images-preview-div');
 });
