@@ -2,27 +2,27 @@
 @section('container')
 
 <!-- Hero Start -->
-<section id="hero" class="pt-[12vh] bg-white w-full">
+<section id="hero" class="pt-[12vh] bg-prime w-full">
   <div class="grid grid-cols-2 gap-8">
     <div class="container pt-[6vh] ">
-      <p>Jika Anda pernah menyaksikan atau menjadi korban kejahatan harap lapor kepada kami.</p>
-      <h1>LAPORKAN DI LAPOR.IN!</h1>
-      <p class="text-prime/80">Laporan ditangani oleh ruang kendali kami dengan cara yang persis sama, baik Anda melaporkannya secara online atau melalui telepon.</p>
+      <p class="text-white">Jika Anda pernah menyaksikan atau menjadi korban kejahatan harap lapor kepada kami.</p>
+      <h1 class="text-white">LAPORKAN DI LAPOR.IN!</h1>
+      <p class="text-white/80">Laporan ditangani oleh ruang kendali kami dengan cara yang persis sama, baik Anda melaporkannya secara online atau melalui telepon.</p>
       <div class="flex flex-row mt-[10vh] gap-8">
         <a href="/dashboard/posts/create" class="buttons bg-button-prime">Buat Laporan</a>
         <a href="/kerjakami" class="buttons bg-button-second">Kerja Kami</a>
       </div>
     </div>
     <div class="w-full">
-      <img src="/images/asset2.jpg" alt="" class="h-[60vh] w-full object-cover rounded-tl-[80px] overflow-hidden">
+      <img src="/images/asset2.jpg" alt="" class="h-[70vh] w-full object-cover rounded-tl-[80px] overflow-hidden">
     </div>
   </div>
+  <div class="w-full bg-gradient-to-b from-prime from-70% to-white h-[10vh]"></div>
 </section>
 <section id="kerjakami" class="w-full bg-white relative">
   <div class="container absolute -top-10">
-    <div class="bg-secondary h-[10vh] rounded-2xl">
-
-    </div>
+    {{-- <div class="bg-secondary h-[5vh] rounded-xl">
+    </div> --}}
   </div>
   <div class="text-center py-[20vh]">
     <h1>Bagaimana Cara Kami Bekerja?</h1>

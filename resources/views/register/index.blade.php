@@ -77,7 +77,10 @@
         
       </div>
     </div>
-    <div class="w-2/3 bg-text-prime h-[100vh]"></div>
+    <div class="w-2/3 bg-text-prime h-[100vh]">
+      <div class="flex justify-center items-center pt-36">
+        <img src="/images/123457.png" alt="" height="500px" width="500px"></div>
+      </div></div>
   </div>
 
 </section>
