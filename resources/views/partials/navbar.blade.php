@@ -34,7 +34,7 @@
             <ul class="block lg:flex">
               <li class="group">
                 <a
-                  href="/#hero"
+                  href="/"
                   class="text-base {{ ($title === "Laporin") ? 'text-text-second' : 'text-white' }} py-2 mx-5 flex group-hover:text-primary"
                   >Beranda</a
                 >
@@ -63,10 +63,9 @@
             </ul>
           </nav>
           <div
-            id="register-login"
-            class="flex {{ ($title === "Aktivitas") ? 'text-text-second' : 'text-white' }} items-center mx-5 hidden lg:flex lg:static lg:static lg:inset-y-0 lg:right-0"
-          >
-            <a href="/">Tutorial</a><span class="mx-5">|</span>
+            id="tutor1"
+            class="flex {{ ($title === "Aktivitas") ? 'text-text-second' : 'text-white' }} items-center mx-5 hidden lg:flex lg:static lg:static lg:inset-y-0 lg:right-0">
+            <button id="tutorial" onclick="driverObj()">Tutorial</button><span class="mx-5">|</span>
             @guest
             <a href="/register" class="mr-5 underline">Daftar</a>
             @endguest

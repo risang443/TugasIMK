@@ -9,8 +9,8 @@
       <h1 class="text-white">LAPORKAN DI LAPOR.IN!</h1>
       <p class="text-white/80">Laporan ditangani oleh ruang kendali kami dengan cara yang persis sama, baik Anda melaporkannya secara online atau melalui telepon.</p>
       <div class="flex flex-row mt-[10vh] gap-8">
-        <a href="/dashboard/posts/create" class="buttons bg-button-prime">Buat Laporan</a>
-        <a href="/kerjakami" class="buttons bg-button-second">Kerja Kami</a>
+        <a href="/dashboard/posts/create" id="tutor2" class="buttons bg-button-prime">Buat Laporan</a>
+        <a href="/kerjakami" id="tutor3" class="buttons bg-button-second">Kerja Kami</a>
       </div>
     </div>
     <div class="w-full">
@@ -72,7 +72,7 @@
             <img src="images/stock.jpg" alt="" class="h-[7vh] rounded-full overflow-hidden">
             <p>112</p>
           </div> --}}
-          <a href="/call" class="buttons bg-button-prime text-text-prime">Hubungi Kami</a>
+          <a href="/call" id="tutor4" class="buttons bg-button-prime text-text-prime">Hubungi Kami</a>
       </div>
       <div>
         <img src="/images/asset3.jpg" alt="" class="rounded-tr-[200px] rounded-bl-[200px] h-[700px]">
@@ -103,7 +103,7 @@
           <a href="/posts/{{ $posts[0]->slug }}" class="buttons text-sm bg-prime text-white">Selengkapnya</a>
         </div>
       </div>
-      <div class="p-6 bg-white rounded-lg h-[53vh] w-[40vh] flex flex-col justify-between">
+      <div id="tutor5" class="p-6 bg-white rounded-lg h-[53vh] w-[40vh] flex flex-col justify-between">
         @if($posts[1]->images)
           <img src="{{ asset('storage/' . $posts[1]->images[0]) }}" alt="{{ $posts[1]->title }}" class="h-[36vh] w-[36vh] object-cover group-hover:scale-105 transition duration-200 ease-in-out">
         @else           
@@ -153,29 +153,29 @@
               colors: ["#838F9E", "#B4BECA"],
               series: [
                 {
-                  name: "Organic",
+                  name: "Kasus Diterima",
                   color: "#838F9E",
                   data: [
-                    { x: "Mon", y: 231 },
-                    { x: "Tue", y: 122 },
-                    { x: "Wed", y: 63 },
-                    { x: "Thu", y: 421 },
-                    { x: "Fri", y: 122 },
-                    { x: "Sat", y: 323 },
-                    { x: "Sun", y: 111 },
+                    { x: "Januari", y: 231 },
+                    { x: "Februari", y: 122 },
+                    { x: "Maret", y: 63 },
+                    { x: "April", y: 421 },
+                    { x: "Mei", y: 122 },
+                    { x: "Juni", y: 323 },
+                    { x: "Juli", y: 111 },
                   ],
                 },
                 {
-                  name: "Social media",
+                  name: "Kasus Selesai",
                   color: "#B4BECA",
                   data: [
-                    { x: "Mon", y: 232 },
-                    { x: "Tue", y: 113 },
-                    { x: "Wed", y: 341 },
-                    { x: "Thu", y: 224 },
-                    { x: "Fri", y: 522 },
-                    { x: "Sat", y: 411 },
-                    { x: "Sun", y: 243 },
+                    { x: "Januari", y: 232 },
+                    { x: "Februari", y: 113 },
+                    { x: "Maret", y: 341 },
+                    { x: "April", y: 224 },
+                    { x: "Mei", y: 522 },
+                    { x: "Juni", y: 411 },
+                    { x: "Juli", y: 243 },
                   ],
                 },
               ],

@@ -56,12 +56,15 @@
               </div>
             </div>
             </form>
-            
+            <div>
+              <a href="/" class="buttons bg-button-prime">< Kembali ke Beranda</a>
+            </div>
           </div>
         </div>
         <div class="w-2/3 bg-text-prime h-auto">
-        <div class="flex justify-center items-center pt-36">
-          <img src="/images/123451.png" alt="" height="600px" width="600px"></div>
+          <div class="flex w-full h-full items-center justify-center">
+            <img src="/images/login.png" alt="" class="h-[60vh]">
+          </div>
         </div>
       </div>
 

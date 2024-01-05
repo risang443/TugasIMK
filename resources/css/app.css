@@ -135,3 +135,39 @@ trix-editor blockquote {
     margin-left: 0.3em;
     padding-left: 0.6em;
 }
+
+/* Class assigned to popover wrapper */
+.driver-popover {
+  background-color: black;
+}
+
+.driver-active {
+  background-color: black;
+}  /* is active */
+.driver-fade {
+  background-color: black;
+}    /* is animated */
+
+/* Arrow pointing towards the highlighted element */
+.driver-popover-arrow {background-color: #0B132A;}
+
+/* Title and description */
+.driver-popover-title {
+  font-size: 24px;
+  font-weight: 600;
+}
+.driver-popover-description {
+  font-weight: 600;
+}
+
+/* Close button displayed on the top right corner */
+.driver-popover-close-btn {
+  color: white;
+}
+
+/* Footer of the popover displaying progress and navigation buttons */
+
+.driver-popover-progress-text {
+  font-weight: 800;
+  font-size: 24px;
+}
