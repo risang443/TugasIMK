@@ -5,7 +5,7 @@
     <div class="bg-white md:container  md:py-4 py-2 rounded-t-3xl ring-2 ring-slate-200 shadow-md md:mx-auto mx-2">
         <div class="flex flex-col justify-center items-center" id="title">
             <h1 class="font-black uppercase text-3xl md:text-5xl text-primary md:px-4 px-7">{{ $title }}</h1>
-            <p class="md:text-left text-center text-hitam/80 tracking-wide text-sm md:text-base px-2">Tempat untuk menemukan artikel inspiratif tentang Homeschooling dan nilai-nilai Islam</p>
+            <p class="md:text-left text-center text-hitam/80 tracking-wide text-sm md:text-base px-2">aaa</p>
         </div>
         <div class="py-4 px-2">
             <div>
@@ -132,29 +132,5 @@
 
     </div>
 </section>
-
-
-{{-- <div class="container">
-    <div class="grid grid-cols-4">
-
-        @foreach ($categories as $category)
-        <div class="w-full max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-            <a href="/posts?category={{ $category->slug }}">
-                <img class="p-8 rounded-t-lg" src="/docs/images/products/apple-watch.png" alt="product image">
-            </a>
-            <div class="px-5 pb-5">
-                <a href="/posts?category={{ $category->slug }}">
-                    <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white"></h5>
-                </a>
-                <div class="flex justify-between items-center">
-                    <span class="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
-                    <a href="/posts?category={{ $category->slug }}" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a>
-                </div>
-            </div>
-        </div>
-        @endforeach
-
-    </div>
-</div> --}}
 
 @endsection
